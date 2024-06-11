@@ -62,7 +62,11 @@ def tensor_addition(tensor1, tensor2):
     Returns:
     sp.MutableDenseNDimArray: The resulting tensor after addition.
     """
-    return tensor1 + tensor2
+    logging.debug(f"Tensor1: {tensor1}")
+    logging.debug(f"Tensor2: {tensor2}")
+    result = tensor1 + tensor2
+    logging.debug(f"Result after addition: {result}")
+    return result
 
 def tensor_multiplication(tensor1, tensor2):
     """
@@ -75,7 +79,11 @@ def tensor_multiplication(tensor1, tensor2):
     Returns:
     sp.MutableDenseNDimArray: The resulting tensor after multiplication.
     """
-    return tensor1 * tensor2
+    logging.debug(f"Tensor1: {tensor1}")
+    logging.debug(f"Tensor2: {tensor2}")
+    result = tensor1 * tensor2
+    logging.debug(f"Result after multiplication: {result}")
+    return result
 
 def save_expression(expression, filename):
     """
