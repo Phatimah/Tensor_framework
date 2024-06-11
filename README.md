@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # TensorFramework
 
 TensorFramework is a tool for automated tensor calculation and simplification. This tool provides a graphical user interface (GUI) to input tensor expressions, perform various tensor operations, and save/load expressions.
@@ -57,3 +58,7 @@ Contributions are welcome. Please open an issue or submit a pull request.
 ## License
 
 This project is licensed under the MIT License.
+||||||| empty tree
+=======
+# Tensor_framework
+>>>>>>> 2765e7a8556cd05b6c8fa34124fc7b3b48423b46
