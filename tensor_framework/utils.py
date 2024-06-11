@@ -1,6 +1,8 @@
 # tensor_framework/utils.py
 import sympy as sp
-import json
+import logging
+
+logging.basicConfig(level=logging.DEBUG)
 
 def create_tensor(symbols, shape):
     """
@@ -30,7 +32,24 @@ def tensor_contraction(tensor, indices):
     Returns:
     sp.Expr: The resulting contracted tensor expression.
     """
-    return tensor.contract(indices)
+    logging.debug(f"Tensor before contraction: {tensor}")
+    if len(indices) != 2:
+        raise ValueError("Tensor contraction requires exactly two indices.")
+    
+    index1, index2 = indices
+    result = 0
+    shape = tensor.shape
+    
+    if index1 == index2:
+        for i in range(shape[index1]):
+            result += tensor[(i, i)]
+    else:
+        for i in range(shape[index1]):
+            for j in range(shape[index2]):
+                result += tensor[(i, j)]
+    
+    logging.debug(f"Result after contraction: {result}")
+    return result
 
 def tensor_addition(tensor1, tensor2):
     """
